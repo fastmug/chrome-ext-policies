@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Link Sloth</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2937;
+      --card-bg: #f9fafb;
+      --border: #e5e7eb;
+      --accent: #2563eb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111827;
+        --text: #f3f4f6;
+        --card-bg: #1f2937;
+        --border: #374151;
+        --accent: #60a5fa;
+      }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--bg);
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .date {
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin-top: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.3rem;
+    }
+    .highlight-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .contact-box {
+      display: inline-block;
+      vertical-align: middle;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      cursor: default;
+    }
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Privacy Policy</h1>
+  <div class="date">Last updated: October 2026</div>
+
+  <p>This Privacy Policy describes how <strong>Link Sloth</strong> ("the Extension", "we", "us") handles user information.</p>
+
+  <div class="highlight-card">
+    <strong>Summary:</strong> Link Sloth does not collect, store, transmit, or share any personal data, browsing history, or user identifiers. Everything runs 100% locally in your browser.
+  </div>
+
+  <h2>1. Information We Do Not Collect</h2>
+  <p>The Extension adheres strictly to a zero-data-collection model:</p>
+  <ul>
+    <li>We do <strong>not</strong> collect personally identifiable information (such as name, email, address, or IP address).</li>
+    <li>We do <strong>not</strong> monitor, record, or track your browsing activity or search history.</li>
+    <li>We do <strong>not</strong> use tracking pixels, analytics SDKs, advertising scripts, or cookies.</li>
+    <li>We do <strong>not</strong> maintain external servers or databases.</li>
+  </ul>
+
+  <h2>2. How the Extension Operates</h2>
+  <p>Link Sloth operates purely on client-side logic executed locally within your Chrome browser:</p>
+  <ul>
+    <li><strong>Multi-URL Tools:</strong> Opens multiple URLs in new tabs and counts or copies tab URLs from your active window upon direct user request.</li>
+    <li><strong>SEO &amp; GEO Analysis:</strong> Inspects on-page HTML elements (such as meta tags, headings, canonical links, image alt texts, and microdata) and checks HTTP response headers directly between your client browser and the target URL you choose to audit.</li>
+    <li><strong>Link Highlights &amp; Extraction:</strong> Analyzes and highlights internal, external, and nofollow links locally within the active tab DOM.</li>
+    <li><strong>Local Storage:</strong> Remembers your local UI preferences (such as the link highlighting toggle) exclusively on your device using Chrome's local storage.</li>
+  </ul>
+  <p>None of this data leaves your local device.</p>
+
+  <h2>3. Third-Party Services</h2>
+  <p>The Extension does not transmit any data to third-party services or vendors. Any interaction occurs directly between your browser and the website you inspect. The extension contains voluntary external links (such as Ko-fi for optional creator appreciation or Google PageSpeed Insights for optional speed checks) that open in new tabs under their respective privacy policies.</p>
+
+  <h2>4. Changes to This Policy</h2>
+  <p>If we update our privacy practices in future versions, revisions will be published on this page with an updated "Last updated" date.</p>
+
+  <h2>5. Contact</h2>
+  <p>
+    If you have any questions or feedback regarding this Privacy Policy, please reach out to the developer at:
+  </p>
+  <div class="contact-box">
+    <canvas id="contact-canvas" height="24" style="vertical-align: middle;"></canvas>
+  </div>
+
+  <script>
+    (function renderProtectedContact() {
+      const canvas = document.getElementById('contact-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const dpr = window.devicePixelRatio || 1;
+
+      // Character code sequence assembled at runtime (invisible to raw HTML scrapers)
+      const codes = [99,104,114,115,116,111,112,104,46,115,99,104,110,101,108,108,98,97,101,99,104,101,114,64,103,109,97,105,108,46,99,111,109];
+      const address = String.fromCharCode.apply(null, codes);
+
+      const fontStr = '16px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif';
+      ctx.font = fontStr;
+      const measured = ctx.measureText(address);
+      const textWidth = Math.ceil(measured.width);
+      const textHeight = 24;
+
+      // Scale canvas for sharp retina / HiDPI rendering
+      canvas.width = (textWidth + 6) * dpr;
+      canvas.height = textHeight * dpr;
+      canvas.style.width = (textWidth + 6) + 'px';
+      canvas.style.height = textHeight + 'px';
+
+      ctx.scale(dpr, dpr);
+      ctx.font = fontStr;
+      ctx.fillStyle = getComputedStyle(document.body).color || '#1f2937';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(address, 2, textHeight / 2);
+    })();
+  </script>
+
+  <footer>
+    <p>Link Sloth is an independent project and is not affiliated with, endorsed by, or sponsored by Google LLC.</p>
+  </footer>
+
+</body>
+</html>
