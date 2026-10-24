@@ -1,2 +1,2 @@
-# chrome-ext-policies
-Privacy policies for Google Chrome extensions.
+# Google Chrome Extension Policies
+Privacy Policies for Google Chrome Extensions.
