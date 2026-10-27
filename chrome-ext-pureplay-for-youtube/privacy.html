@@ -95,7 +95,8 @@
   <ul>
     <li><strong>Audio Track Selection:</strong> Interacts with the YouTube video player on the loaded page to select the original audio track instead of automated translations.</li>
     <li><strong>Player Defaults:</strong> Toggles YouTube's native subtitle and autoplay controls on video initialization.</li>
-    <li><strong>Playback Speed:</strong> Reads and modifies the playback rate when you trigger the extension action icon.</li>
+    <li><strong>Playback Speed:</strong> Reads and modifies the playback rate (and briefly displays an on-screen <code>1.5x</code> / <code>1x</code> callout) when you trigger the extension action icon.</li>
+    <li><strong>Local Feature Preferences:</strong> Uses Chrome's local storage API (<code>chrome.storage.local</code>) and action context menu solely to save your on/off toggle states for <em>Enforce Original Audio Track</em>, <em>Disable Subtitles</em>, and <em>Disable Autoplay</em> locally on your device.</li>
   </ul>
   <p>None of this data leaves your local device.</p>
 
